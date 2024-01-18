@@ -1,0 +1,14 @@
+dist: focal
+arch: ppc64le
+
+script:
+  - snap list
+  - sudo snap install lxd --channel=latest/stable
+  - lxd init --minimal
+  - lxc ls
+
+  - lxc launch ubuntu:22.04 test
+  - lxc ls
+  - lxc exec test -- apt update -y
+  - lxc exec test -- apt install alien -y
+  - lxc exec test -- alien
