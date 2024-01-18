@@ -4,6 +4,7 @@ arch: ppc64le
 
 before_script:
   - sudo usermod -aG lxd $USER
+  - newgrp lxd
   
 script:
   - snap list
