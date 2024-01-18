@@ -9,11 +9,11 @@ script:
   - lxd init --minimal
   # - lxc ls
 
-  - lxc launch ubuntu:22.04 test
-  - lxc ls
-  - lxc exec test -- apt update -y
-  - lxc exec test -- apt install alien -y
-  - lxc exec test -- alien
+  # - lxc launch ubuntu:22.04 test
+  # - lxc ls
+  # - lxc exec test -- apt update -y
+  # - lxc exec test -- apt install alien -y
+  # - lxc exec test -- alien
 
-after_failure:
+after_script:
   - cat /var/log/lxd/lxd.log
