@@ -18,3 +18,4 @@ script:
   - sudo ls -lha /var/log/lxd
   - sudo wc /var/log/lxd/lxd.log
   - sudo cat /var/log/lxd/lxd.log
+  - journalctl -u snap.lxd.service 
