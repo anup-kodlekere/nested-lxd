@@ -17,4 +17,4 @@ script:
   # - lxc exec test -- alien
 
   - sudo ls -lha /var/snap/lxd/common/lxd/logs/
-  sudo cat /var/snap/lxd/common/lxd/logs/lxd.log
+  - sudo cat /var/snap/lxd/common/lxd/logs/lxd.log
