@@ -12,7 +12,7 @@ script:
   - sudo lxd init --minimal
   # - sudo sudo -E -u travis -g lxd -i 'lxd init --minimal'
 
-  - sudo lxc launch ubuntu:22.04 test
+  - travis_wait sudo lxc --debug launch ubuntu:22.04 test
   - sudo lxc ls
   - sudo lxc exec test -- apt update -y
   - sudo lxc exec test -- apt install alien -y
