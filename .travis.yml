@@ -2,14 +2,14 @@ dist: jammy
 group: edge
 arch: ppc64le
 
-before_script:
-  - sudo usermod -aG lxd $USER
-  - newgrp lxd
+# before_script:
+#   - sudo usermod -aG lxd $USER
+#   - newgrp lxd
   
 script:
   - snap list
   - sudo snap refresh lxd --channel=latest/stable
-  - lxd init --minimal
+  - sudo sudo -E -u travis -g lxd -i ' lxd init --minimal'
   - lxc --debug ls 
 
   # - lxc launch ubuntu:22.04 test
