@@ -15,6 +15,7 @@ script:
   # - lxc exec test -- apt update -y
   # - lxc exec test -- apt install alien -y
   # - lxc exec test -- alien
+  - sudo ls /var/log
   - sudo ls -lha /var/log/lxd
   - sudo wc /var/log/lxd/lxd.log
   - sudo cat /var/log/lxd/lxd.log
