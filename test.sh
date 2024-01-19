@@ -13,5 +13,5 @@ else
 fi
 
 
-${PREFIX} ${SU} lxc launch ubuntu:22.04 test ${LXD_FLAGS}
+${PREFIX} ${SU} lxc launch ubuntu:22.04 test ${LXD_FLAGS} 2>&1
 lxc ls
