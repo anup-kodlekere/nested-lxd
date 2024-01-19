@@ -22,7 +22,7 @@ script:
   # - travis_wait 20 sudo lxc --debug launch ubuntu:22.04 test -c security.privileged=true
   # - sudo lxc ls
 
-  - sudo ./test.sh
+  - ./test.sh
   - sudo lxc exec test -- apt update -y
   - sudo lxc exec test -- apt install alien -y
   - sudo lxc exec test -- alien -V
