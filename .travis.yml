@@ -5,6 +5,9 @@ arch: ppc64le
 # before_script:
 #   - sudo usermod -aG lxd $USER
 #   - newgrp lxd
+
+before_script:
+  - sudo chmod +x test.sh
   
 script:
   - id
@@ -15,8 +18,10 @@ script:
   - sudo lxd init --minimal
   # - sudo sudo -E -u travis -g lxd -i 'lxd init --minimal'
 
-  - travis_wait 20 sudo lxc --debug launch ubuntu:22.04 test -c security.privileged=true
-  - sudo lxc ls
+  # - travis_wait 20 sudo lxc --debug launch ubuntu:22.04 test -c security.privileged=true
+  # - sudo lxc ls
+
+  - travis_wait 20 sudo ./test.sh
   - sudo lxc exec test -- apt update -y
   - sudo lxc exec test -- apt install alien -y
   - sudo lxc exec test -- alien -V
