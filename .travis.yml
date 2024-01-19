@@ -19,8 +19,9 @@ script:
   - sudo lxc ls
   - sudo lxc exec test -- apt update -y
   - sudo lxc exec test -- apt install alien -y
-  - sudo lxc exec test -- alien
+  - sudo lxc exec test -- alien -V
 
 after_script:
   - sudo ls -lha /var/snap/lxd/common/lxd/logs/
   - sudo cat /var/snap/lxd/common/lxd/logs/lxd.log
+  - sudo cat /var/snap/lxd/common/lxd/logs/test
