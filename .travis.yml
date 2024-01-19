@@ -8,6 +8,7 @@ arch: ppc64le
 
 before_script:
   - sudo chmod +x test.sh
+  - export -f travis_wait
   
 script:
   - export CI=true
