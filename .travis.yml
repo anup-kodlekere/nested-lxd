@@ -9,6 +9,7 @@ arch: ppc64le
 before_script:
   - sudo chmod +x test.sh
   - export -f travis_wait
+  - export -f travis_jigger
   
 script:
   - export CI=true
