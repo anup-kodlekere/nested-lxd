@@ -10,6 +10,7 @@ before_script:
   - sudo chmod +x test.sh
   
 script:
+  - export CI=true
   - id
   - cat /proc/self/uid_map
   - cat /proc/self/gid_map
