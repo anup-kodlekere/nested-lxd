@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -o xtrace 
+
 if [[ "${CI}" = true ]]; then
   PREFIX="travis_wait 20"
   LXD_FLAGS="-c security.privileged=true"
